@@ -1,0 +1,32 @@
+<form #signUpForm="ngForm" (ngSubmit)="signUpForm.valid && onSubmit(signUpForm)">
+<div id="login-box">
+    <div class="left">
+      <h1>Sign up</h1>
+      
+      <!-- <input type="text" #fullName="ngModel" [([(ngModel)]="userService.selectedUser.fullName")] name="username" placeholder="Username" /> -->
+      <input type="text" #fullName="ngModel" [(ngModel)]="userService.selectedUser.fullName" name="fullName" placeholder="Full Name"
+  required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !fullName.valid }">
+
+      <!-- <input type="text" #email="ngModel" [(ngModel)]="userService.selectedUser.email" name="email" placeholder="E-mail" /> -->
+      <input type="text" #email="ngModel" [(ngModel)]="userService.selectedUser.email" name="email" placeholder="Email"
+  required [pattern]="emailRegex"  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !email.valid }">
+     
+  <input type="password" #password="ngModel" [(ngModel)]="userService.selectedUser.password" name="password" placeholder="Password"
+  minlength="4" required [ngClass]="{'invalid-textbox' :signUpForm.submitted && !password.valid }">
+
+      <!-- <input type="password" #password="ngModel" [(ngModel)]="userService.selectedUser.password" name="password" placeholder="Password" /> -->
+      <!-- <input type="password" name="password2" placeholder="Retype password" /> -->
+      
+      <input type="submit" name="signup_submit" value="Sign me up" />
+    </div>
+    
+    <div class="right">
+      <span class="loginwith">Sign in with<br />social network</span>
+      
+      <!-- <button class="social-signin facebook">Log in with facebook</button>
+      <button class="social-signin twitter">Log in with Twitter</button>
+      <button class="social-signin google">Log in with Google+</button> -->
+    </div>
+    <!-- <div class="or">OR</div> -->
+  </div>
+</form>
