@@ -8,4 +8,6 @@ open second terminal in your vs code and then
 3. cd logReg
 4. ng serve --port
 
+
+![ScreenShot](images/registerss.png)
 ![ScreenShot](images/loginss.png)
